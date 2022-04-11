@@ -15,9 +15,9 @@ test('Deve ser capaz de criar novas categoria', function () {
     $createCategory = new CreateCategory($repository);
     $createCategory->run($dto);
 
-    $this->assertCount(1, $repository->getAll());
+    $this->assertCount(1, $repository->findAll());
 
     $createCategory->run($dto);
 
-    $this->assertCount(2, $repository->getAll());
+    $this->assertCount(2, $repository->findAll());
 });

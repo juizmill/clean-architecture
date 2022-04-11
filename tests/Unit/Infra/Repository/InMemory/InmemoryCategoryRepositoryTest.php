@@ -13,7 +13,7 @@ test('Deve cadastrar uma categoria e retornar uma lista de categorias', function
 
     $repository = new InMemoryCategoryRepository();
     $repository->create($category);
-    $results = $repository->getAll();
+    $results = $repository->findAll();
 
     $this->assertCount(1, $results);
     $this->assertSame($category, current($results));

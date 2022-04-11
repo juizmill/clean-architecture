@@ -10,5 +10,5 @@ interface CategoryRepositoryInterface
 {
     public function create(Category $category): void;
 
-    public function getAll(): array;
+    public function findAll(): array;
 }

@@ -16,7 +16,7 @@ class InMemoryCategoryRepository implements CategoryRepositoryInterface
         $this->categories[] = $category;
     }
 
-    public function getAll(): array
+    public function findAll(): array
     {
         return $this->categories;
     }
