@@ -1,5 +1,6 @@
 .idea/
 vendor/
 node_modules/
+coverage/
 .tool-versions
 .phpunit.result.cache
