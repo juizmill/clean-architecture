@@ -20,6 +20,9 @@
         "symfony/var-dumper": "^6.0"
     },
     "config": {
+        "platform": {
+            "ext-ds": "1.4.0"
+        },
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }

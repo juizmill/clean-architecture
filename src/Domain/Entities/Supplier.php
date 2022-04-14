@@ -7,27 +7,29 @@ namespace App\Domain\Entities;
 use App\Domain\ValueObjects\Ie;
 use App\Domain\ValueObjects\Cnpj;
 use App\Domain\ValueObjects\Email;
-use App\Domain\ValueObjects\Phones;
+use App\Domain\ValueObjects\Phone;
 use App\Domain\ValueObjects\Address;
+use App\Domain\Enums\SupplierTypeEnum;
 use App\Domain\ValueObjects\SupplierInformation;
 
 class Supplier
 {
+    private array $phones = [];
+
     public function __construct(
-        private string $type,
         private string $name,
         private Cnpj $cnpj,
-        private Ie $ie,
         private Email $email,
-        private Phones $phoneNumber,
         private Address $address,
-        private SupplierInformation $supplierInformation
+        private SupplierInformation $supplierInformation,
+        private SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT,
+        private ?Ie $ie = null
     ) {
     }
 
     public function getType(): string
     {
-        return $this->type;
+        return $this->type->value;
     }
 
     public function getName(): string
@@ -40,7 +42,7 @@ class Supplier
         return $this->cnpj;
     }
 
-    public function getIe(): Ie
+    public function getIe(): ?Ie
     {
         return $this->ie;
     }
@@ -48,11 +50,6 @@ class Supplier
     public function getEmail(): Email
     {
         return $this->email;
-    }
-
-    public function getPhoneNumber(): Phones
-    {
-        return $this->phoneNumber;
     }
 
     public function getAddress(): Address
@@ -63,5 +60,17 @@ class Supplier
     public function getSupplierInformation(): SupplierInformation
     {
         return $this->supplierInformation;
+    }
+
+    public function addPhone(Phone $phone): static
+    {
+        $this->phones[] = $phone;
+        return $this;
+    }
+
+    /** @return Phone[] */
+    public function getPhones(): array
+    {
+        return $this->phones;
     }
 }
