@@ -6,6 +6,6 @@ namespace App\Domain\Enums;
 
 enum PhoneEnum: string
 {
-    case CELL = 'Cell';
+    case CELL = 'Celular';
     case COMMERCIAL = 'Commercial';
 }

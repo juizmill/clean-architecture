@@ -6,6 +6,7 @@ namespace App\Domain\Entities;
 
 use App\Domain\ValueObjects\Ie;
 use App\Domain\ValueObjects\Cnpj;
+use App\Domain\ValueObjects\Uuid;
 use App\Domain\ValueObjects\Email;
 use App\Domain\ValueObjects\Phone;
 use App\Domain\ValueObjects\Address;
@@ -17,6 +18,7 @@ class Supplier
     private array $phones = [];
 
     public function __construct(
+        private Uuid $uuid,
         private string $name,
         private Cnpj $cnpj,
         private Email $email,
@@ -25,6 +27,11 @@ class Supplier
         private SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT,
         private ?Ie $ie = null
     ) {
+    }
+
+    public function getUuid(): Uuid
+    {
+        return $this->uuid;
     }
 
     public function getType(): string

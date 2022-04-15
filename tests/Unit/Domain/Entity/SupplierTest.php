@@ -8,6 +8,7 @@ use App\Domain\Enums\PhoneEnum;
 use App\Domain\ValueObjects\Cep;
 use App\Domain\Entities\Supplier;
 use App\Domain\ValueObjects\Cnpj;
+use App\Domain\ValueObjects\Uuid;
 use App\Domain\ValueObjects\Email;
 use App\Domain\ValueObjects\State;
 use App\Domain\ValueObjects\Phone;
@@ -15,16 +16,19 @@ use App\Domain\ValueObjects\Address;
 use App\Domain\Enums\SupplierTypeEnum;
 use App\Domain\ValueObjects\SupplierInformation;
 
-test('Deve ser capas de criar uma instancia de Fornecedor', function () {
+$uuid = new Uuid('60b9e9e5-40b7-4805-a23f-f5af1ad89803');
+
+test('Deve ser capas de criar uma instancia de Fornecedor', function () use ($uuid) {
     $cnpj = new Cnpj('71.609.569/0001-05');
     $email = new Email('teste@teste.com');
     $cep = new Cep('79645-040');
     $state = new State(StateEnum::MS);
-    $address = new Address($cep, 'Domingos Rimolli', '1500', 'Casa', 'JD. Vendrell', 'Três Lagoas', $state);
+    $address = new Address($cep, 'Domingos Rimolli', '1500', 'JD. Vendrell', 'Três Lagoas', $state, 'Casa');
     $supplierInformation = new SupplierInformation(5, 10, 700, '#000');
     $ie = new Ie('03039896714');
 
     $supplier = new Supplier(
+        $uuid,
         'Teste',
         $cnpj,
         $email,
@@ -43,6 +47,7 @@ test('Deve ser capas de criar uma instancia de Fornecedor', function () {
 
     $this->assertEquals(2, count($supplier->getPhones()));
 
+    $this->assertSame($uuid, $supplier->getUuid());
     $this->assertSame('Teste', $supplier->getName());
     $this->assertSame('71.609.569/0001-05', (string)$supplier->getCnpj());
     $this->assertSame('teste@teste.com', (string)$supplier->getEmail());

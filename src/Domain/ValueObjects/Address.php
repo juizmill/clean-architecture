@@ -10,10 +10,10 @@ class Address
         private Cep $cep,
         private string $street,
         private string $number,
-        private string $complement,
         private string $district,
         private string $city,
-        private State $state
+        private State $state,
+        private ?string $complement = null,
     ) {
     }
 
@@ -32,7 +32,7 @@ class Address
         return $this->number;
     }
 
-    public function getComplement(): string
+    public function getComplement(): ?string
     {
         return $this->complement;
     }

@@ -9,7 +9,7 @@ test('Deve criar uma instancia de telefone com 9 dígitos', function () {
     $phone = new Phone(67, '99225-9401', PhoneEnum::CELL);
 
     $this->assertSame('(67) 99225-9401', (string)$phone);
-    $this->assertSame('Cell', $phone->getType());
+    $this->assertSame('Celular', $phone->getType());
 });
 
 test('Deve criar uma instancia de telefone com 8 dígitos', function () {

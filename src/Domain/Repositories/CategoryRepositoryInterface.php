@@ -6,9 +6,7 @@ namespace App\Domain\Repositories;
 
 use App\Domain\Entities\Category;
 
-interface CategoryRepositoryInterface
+interface CategoryRepositoryInterface extends RepositoryInterface
 {
     public function create(Category $category): void;
-
-    public function findAll(): array;
 }
