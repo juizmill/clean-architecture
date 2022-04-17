@@ -8,7 +8,7 @@ use DomainException;
 
 class Cnpj
 {
-    public function __construct(private string $cnpj)
+    public function __construct(private readonly string $cnpj)
     {
         if (!$this->isValid($this->cnpj)) {
             throw new DomainException('CNPJ é invalido.');

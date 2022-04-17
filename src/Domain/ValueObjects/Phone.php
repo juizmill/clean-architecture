@@ -9,8 +9,11 @@ use App\Domain\Enums\PhoneEnum;
 
 class Phone
 {
-    public function __construct(private int $ddd, private string $number, private PhoneEnum $type)
-    {
+    public function __construct(
+        private readonly int $ddd,
+        private readonly string $number,
+        private readonly PhoneEnum $type
+    ) {
         if (!preg_match('/^\d{2}/i', (string)$this->ddd)) {
             throw new DomainException('Formato do DDD inválido.');
         }

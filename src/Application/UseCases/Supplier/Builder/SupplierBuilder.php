@@ -28,9 +28,9 @@ class SupplierBuilder implements SupplierBuilderInterface
     private array $phones = [];
 
     public function __construct(
-        private Uuid $uuid,
-        private string $name,
-        private SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT
+        private readonly Uuid $uuid,
+        private readonly string $name,
+        private readonly SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT
     ) {
     }
 

@@ -10,7 +10,7 @@ use App\Domain\Repositories\CategoryRepositoryInterface;
 
 class CreateCategory
 {
-    public function __construct(private CategoryRepositoryInterface $repository)
+    public function __construct(private readonly CategoryRepositoryInterface $repository)
     {
     }
 

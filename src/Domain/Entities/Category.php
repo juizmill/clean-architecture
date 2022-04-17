@@ -9,8 +9,11 @@ use App\Domain\ValueObjects\Uuid;
 
 class Category
 {
-    public function __construct(private Uuid $uuid, private string $name, private ?string $description = null)
-    {
+    public function __construct(
+        private readonly Uuid $uuid,
+        private readonly string $name,
+        private readonly ?string $description = null
+    ) {
         if (empty($this->name)) {
             throw new DomainException(message: 'O nome da categoria não deve está em branco.');
         }

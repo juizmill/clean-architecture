@@ -6,7 +6,7 @@ namespace App\Domain\ValueObjects;
 
 class Ie
 {
-    public function __construct(private ?string $ie = null)
+    public function __construct(private readonly ?string $ie = null)
     {
         if (!is_null($this->isValid()) && !$this->isValid()) {
             throw new \DomainException('Inscrição estadual é inválida.');

@@ -9,10 +9,10 @@ use DomainException;
 class SupplierInformation
 {
     public function __construct(
-        private int $deadline,
-        private int $margin,
-        private int $minimumBilling = 0,
-        private ?string $color = null
+        private readonly int $deadline,
+        private readonly int $margin,
+        private readonly int $minimumBilling = 0,
+        private readonly ?string $color = null
     ) {
         if (!is_null($this->color) && !preg_match('/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/i', $this->color)) {
             throw new DomainException('Cor não é um hexadecimal válido.');

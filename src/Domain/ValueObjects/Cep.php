@@ -8,7 +8,7 @@ use DomainException;
 
 class Cep
 {
-    public function __construct(private string $cep)
+    public function __construct(private readonly string $cep)
     {
         if (!preg_match('/^[\d]{5}-[\d]{3}/i', $this->cep)) {
             throw new DomainException('Formato do CEP inválido.');

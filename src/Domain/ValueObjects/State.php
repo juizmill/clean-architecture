@@ -8,7 +8,7 @@ use App\Domain\Enums\StateEnum;
 
 class State
 {
-    public function __construct(private StateEnum $stateEnum)
+    public function __construct(private readonly StateEnum $stateEnum)
     {
     }
 

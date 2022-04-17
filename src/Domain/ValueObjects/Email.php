@@ -8,7 +8,7 @@ use DomainException;
 
 class Email
 {
-    public function __construct(private string $email)
+    public function __construct(private readonly string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new DomainException('Email inválido.');

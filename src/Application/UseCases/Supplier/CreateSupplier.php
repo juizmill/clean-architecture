@@ -12,7 +12,7 @@ use App\Application\UseCases\Supplier\Builder\SupplierBuilder;
 
 class CreateSupplier
 {
-    public function __construct(private SupplierRepositoryInterface $repository)
+    public function __construct(private readonly SupplierRepositoryInterface $repository)
     {
     }
 

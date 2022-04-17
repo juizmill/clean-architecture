@@ -24,7 +24,7 @@ class CreateSupplierDTO
     public ?string $color = null;
     protected array $phones = [];
 
-    public function addPhone(int $ddd, string $number, string $type)
+    public function addPhone(int $ddd, string $number, string $type): void
     {
         $this->phones[] = [ 'ddd' => $ddd, 'number' => $number, 'type' => $type ];
     }

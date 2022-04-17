@@ -7,13 +7,13 @@ namespace App\Domain\ValueObjects;
 class Address
 {
     public function __construct(
-        private Cep $cep,
-        private string $street,
-        private string $number,
-        private string $district,
-        private string $city,
-        private State $state,
-        private ?string $complement = null,
+        private readonly Cep $cep,
+        private readonly string $street,
+        private readonly string $number,
+        private readonly string $district,
+        private readonly string $city,
+        private readonly State $state,
+        private readonly ?string $complement = null,
     ) {
     }
 

@@ -18,14 +18,14 @@ class Supplier
     private array $phones = [];
 
     public function __construct(
-        private Uuid $uuid,
-        private string $name,
-        private Cnpj $cnpj,
-        private Email $email,
-        private Address $address,
-        private SupplierInformation $supplierInformation,
-        private SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT,
-        private ?Ie $ie = null
+        private readonly Uuid $uuid,
+        private readonly string $name,
+        private readonly Cnpj $cnpj,
+        private readonly Email $email,
+        private readonly Address $address,
+        private readonly SupplierInformation $supplierInformation,
+        private readonly SupplierTypeEnum $type = SupplierTypeEnum::DEFAULT,
+        private readonly ?Ie $ie = null
     ) {
     }
 
