@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Entities;
 
+use DomainException;
 use App\Domain\ValueObjects\Uuid;
 use App\Domain\ValueObjects\Slug;
 
@@ -13,9 +14,12 @@ class Brand
         private readonly Uuid $uuid,
         private readonly string $name,
         private readonly Slug $slug,
-        private readonly string $imageUrl,
-        private readonly bool $active,
+        private readonly bool $active = true,
+        private readonly ?string $imageUrl = null
     ) {
+        if (empty($name)) {
+            throw new DomainException('O nome da marca não deve está em branco.');
+        }
     }
 
     public function getUuid(): Uuid
@@ -28,12 +32,12 @@ class Brand
         return $this->name;
     }
 
-    public function getSlug(): Slug
+    public function getSlug(): string
     {
-        return $this->slug;
+        return (string) $this->slug;
     }
 
-    public function getImageUrl(): string
+    public function getImageUrl(): ?string
     {
         return $this->imageUrl;
     }
