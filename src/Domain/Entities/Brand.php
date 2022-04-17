@@ -4,21 +4,18 @@ declare(strict_types=1);
 
 namespace App\Domain\Entities;
 
-use DomainException;
 use App\Domain\ValueObjects\Uuid;
 use App\Domain\ValueObjects\Slug;
 
-class Category
+class Brand
 {
     public function __construct(
         private readonly Uuid $uuid,
         private readonly string $name,
         private readonly Slug $slug,
-        private readonly ?string $description = null
+        private readonly string $imageUrl,
+        private readonly bool $active,
     ) {
-        if (empty($this->name)) {
-            throw new DomainException(message: 'O nome da categoria não deve está em branco.');
-        }
     }
 
     public function getUuid(): Uuid
@@ -31,13 +28,18 @@ class Category
         return $this->name;
     }
 
-    public function getSlug(): string
+    public function getSlug(): Slug
     {
-        return (string) $this->slug;
+        return $this->slug;
     }
 
-    public function getDescription(): string
+    public function getImageUrl(): string
     {
-        return $this->description;
+        return $this->imageUrl;
+    }
+
+    public function isActive(): bool
+    {
+        return $this->active;
     }
 }

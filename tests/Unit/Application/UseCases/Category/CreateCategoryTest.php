@@ -7,6 +7,7 @@ use App\Infra\Repository\InMemory\InMemoryCategoryRepository;
 test('Deve ser capaz de criar novas categoria', function () {
     $dto = new CreateCategoryDTO();
     $dto->name = 'test 1';
+    $dto->slug = 'test 1';
     $dto->description = 'test 1 description';
 
     $repository = new InMemoryCategoryRepository();
