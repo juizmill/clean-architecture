@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Domain\ValueObjects\Slug;
 
 test('Deve gerar uma Slug valida', function () {

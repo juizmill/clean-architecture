@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Domain\ValueObjects\Cep;
 
 test('Deve ser capas de criar instância de CEP', function () {

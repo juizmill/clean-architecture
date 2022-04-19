@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Application\UseCases\Category\CreateCategory;
 use App\Application\UseCases\Category\CreateCategoryDTO;
 use App\Infra\Repository\InMemory\InMemoryCategoryRepository;

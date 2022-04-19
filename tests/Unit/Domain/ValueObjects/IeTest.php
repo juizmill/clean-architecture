@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Domain\ValueObjects\Ie;
 
 test('Deve criar uma instância de Ie', function () {

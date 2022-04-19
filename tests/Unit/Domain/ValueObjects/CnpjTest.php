@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Domain\ValueObjects\Cnpj;
 
 test('Deve ser capas de criar uma instancia de CNPJ', function () {

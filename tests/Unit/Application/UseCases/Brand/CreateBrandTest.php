@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Application\UseCases\Brand\CreateBrand;
 use App\Application\UseCases\Brand\CreateBrandDTO;
 use App\Infra\Repository\InMemory\InMemoryBrandRepository;

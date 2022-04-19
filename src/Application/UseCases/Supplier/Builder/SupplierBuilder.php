@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\UseCases\Supplier\Builder;
 
 use App\Domain\ValueObjects\Ie;

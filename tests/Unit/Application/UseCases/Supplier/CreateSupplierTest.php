@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Domain\Enums\StateEnum;
 use App\Domain\Enums\PhoneEnum;
 use App\Domain\Entities\Supplier;
