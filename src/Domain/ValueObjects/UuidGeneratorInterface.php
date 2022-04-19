@@ -7,4 +7,6 @@ namespace App\Domain\ValueObjects;
 interface UuidGeneratorInterface
 {
     public static function generate(): Uuid;
+
+    public static function fromString(string $uui): Uuid;
 }

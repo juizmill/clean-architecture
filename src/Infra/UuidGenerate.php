@@ -16,4 +16,9 @@ class UuidGenerate implements UuidGeneratorInterface
 
         return new Uuid($uuid);
     }
+
+    public static function fromString(string $uui): Uuid
+    {
+        return new Uuid($uui);
+    }
 }

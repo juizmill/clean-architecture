@@ -33,13 +33,7 @@ class Slug
         $text = preg_replace('~-+~', $divider, $text);
 
         // lowercase
-        $text = strtolower($text);
-
-        if (empty($text)) {
-            return 'n-a';
-        }
-
-        return $text;
+        return strtolower($text);
     }
 
     public function __toString(): string

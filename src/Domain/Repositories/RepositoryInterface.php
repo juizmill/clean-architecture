@@ -2,7 +2,11 @@
 
 namespace App\Domain\Repositories;
 
+use App\Domain\ValueObjects\Uuid;
+
 interface RepositoryInterface
 {
     public function findAll(): array;
+
+    public function find(Uuid $uuid): mixed;
 }

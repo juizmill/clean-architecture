@@ -22,5 +22,5 @@ test('Cria instancia de marca e retorna dados esperados', function () use ($uuid
 
 test('Deve retornar erro caso o nome esteja em branco', function () use ($uuid) {
     $slug = new Slug('Test');
-    $brand = new Category($uuid, '', $slug);
-})->throws(DomainException::class, 'O nome da categoria não deve está em branco.');
+    (new Brand($uuid, '', $slug, true, 'URL-IMAGE'));
+})->throws(DomainException::class, 'O nome da marca não deve está em branco.');
