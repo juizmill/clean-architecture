@@ -43,7 +43,7 @@ class CreateProduct
 
     private function getCategory(CreateProductDTO $dto): mixed
     {
-        $category = $this->categoryRepository->find(UuidGenerate::fromString($dto->uuidCategory));
+        $category = $this->categoryRepository->findByUuid(UuidGenerate::fromString($dto->uuidCategory));
         if ($category === null) {
             throw new NotFoundResultRepositoryException(
                 "Categoria {$dto->uuidCategory} não encontrado."
@@ -54,7 +54,7 @@ class CreateProduct
 
     private function getBrand(CreateProductDTO $dto): mixed
     {
-        $brand = $this->brandRepository->find(UuidGenerate::fromString($dto->uuidBrand));
+        $brand = $this->brandRepository->findByUuid(UuidGenerate::fromString($dto->uuidBrand));
         if ($brand === null) {
             throw new NotFoundResultRepositoryException(
                 "Marca {$dto->uuidBrand} não encontrado."

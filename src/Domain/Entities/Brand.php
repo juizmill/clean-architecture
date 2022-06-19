@@ -11,7 +11,7 @@ use App\Domain\ValueObjects\Slug;
 class Brand
 {
     public function __construct(
-        private readonly Uuid $uuid,
+        private Uuid $uuid,
         private readonly string $name,
         private readonly Slug $slug,
         private readonly bool $active = true,

@@ -75,7 +75,7 @@ test('Deve retornar um produto por UUID', function () use ($product) {
     $repository->create($product2);
     $repository->create($product3);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertSame('Product test2', $find->getName());
 });
@@ -87,7 +87,7 @@ test('Deve retornar nulo por não encontrou o produto por UUID', function () use
     $repository = new InMemoryProductRepository();
     $repository->create($product);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertNull($find);
 });

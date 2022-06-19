@@ -8,5 +8,5 @@ interface RepositoryInterface
 {
     public function findAll(): array;
 
-    public function find(Uuid $uuid): mixed;
+    public function findByUuid(Uuid $uuid): mixed;
 }

@@ -70,7 +70,7 @@ test('Deve retornar um fornecedor por UUID', function () use ($supplier) {
     $repository->create($supplier2);
     $repository->create($supplier3);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertSame('Teste2', $find->getName());
 });
@@ -82,7 +82,7 @@ test('Deve retornar nulo porque não encontrou o fornecedor por UUID', function 
     $repository = new InMemorySupplierRepository();
     $repository->create($supplier);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertNull($find);
 });

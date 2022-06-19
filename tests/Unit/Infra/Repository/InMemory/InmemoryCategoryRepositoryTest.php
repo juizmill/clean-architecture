@@ -56,7 +56,7 @@ test('Deve retornar uma categoria por UUID', function () use ($uuid) {
     $repository->create($category2);
     $repository->create($category3);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertSame('test category2', $find->getName());
 });
@@ -72,7 +72,7 @@ test('Deve retornar nulo porque não encontrei a categoria por UUID', function (
     $repository = new InMemoryCategoryRepository();
     $repository->create($category);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertNull($find);
 });

@@ -22,7 +22,7 @@ class InMemoryBrandRepository implements BrandRepositoryInterface
         return $this->brands;
     }
 
-    public function find(Uuid $uuid): ?Brand
+    public function findByUuid(Uuid $uuid): ?Brand
     {
         foreach ($this->brands as $brand) {
             /** @var Brand $brand */

@@ -22,7 +22,7 @@ class InMemoryCategoryRepository implements CategoryRepositoryInterface
         return $this->categories;
     }
 
-    public function find(Uuid $uuid): ?Category
+    public function findByUuid(Uuid $uuid): ?Category
     {
         foreach ($this->categories as $category) {
             /** @var Category $category */

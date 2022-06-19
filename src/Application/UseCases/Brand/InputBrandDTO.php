@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\UseCases\Brand;
 
-class CreateBrandDTO
+class InputBrandDTO
 {
     public string $name;
     public string $slug;

@@ -41,7 +41,7 @@ test('Deve retornar uma marcas por UUID', function () use ($uuid) {
     $repository->create($brand2);
     $repository->create($brand3);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertSame('test marca2', $find->getName());
 });
@@ -52,7 +52,7 @@ test('Deve retornar nulo porque não encontrou marcas por UUID', function () use
     $repository = new InMemoryBrandRepository();
     $repository->create($brand);
 
-    $find = $repository->find(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
+    $find = $repository->findByUuid(new Uuid('a9aa2164-c62f-4cb6-b40b-0c64e99c4bb2'));
 
     $this->assertNull($find);
 });

@@ -22,7 +22,7 @@ class InMemorySupplierRepository implements SupplierRepositoryInterface
         return $this->suppliers;
     }
 
-    public function find(Uuid $uuid): ?Supplier
+    public function findByUuid(Uuid $uuid): ?Supplier
     {
         foreach ($this->suppliers as $supplier) {
             /** @var Supplier $supplier */

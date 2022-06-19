@@ -22,7 +22,7 @@ class InMemoryProductRepository implements ProductRepositoryInterface
         return $this->products;
     }
 
-    public function find(Uuid $uuid): ?Product
+    public function findByUuid(Uuid $uuid): ?Product
     {
         foreach ($this->products as $product) {
             /** @var Product $product */
